@@ -1,5 +1,33 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "schedule": [
+    "before 9am on the first day of the month"
+  ],
+  "packageRules": [
+    {
+      "groupName": "production dependencies",
+      "packagePatterns": [
+        "*"
+      ],
+      "enabled": true,
+      "depTypeList": [
+        "dependencies"
+      ]
+    },
+    {
+      "groupName": "dev dependencies",
+      "packagePatterns": [
+        "*"
+      ],
+      "depTypeList": [
+        "devDependencies"
+      ],
+      "automerge": true,
+      "enabled": true
+    }
+  ],
+  "timezone": "Australia/Melbourne",
+  "automerge": false
 }
