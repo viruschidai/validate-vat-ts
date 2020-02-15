@@ -1,5 +1,7 @@
 # Validate European VAT number
 
+[![Build Status](https://travis-ci.com/viruschidai/validate-vat-ts.svg?branch=master)](https://travis-ci.com/viruschidai/validate-vat-ts)
+
 The original [validate-vat](https://github.com/viruschidai/validate-vat) lib was written in CoffeeScript and did not update for many years. This rewrites it in TypeScript and should work in both server side and client side. This lib is basically calling web service provided by VIES (at http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl) for VAT number validation. 
 
 ## What is a VAT number?
