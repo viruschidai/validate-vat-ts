@@ -11,7 +11,7 @@ npm install validate-vat-ts
 ```
 In your code
 ```javascript
-import validateVat, {} from 'validate-vat';
+import validateVat, {ViesValidationResponse} from 'validate-vat';
 
 const consumer = async () => {
   try {
@@ -20,7 +20,6 @@ const consumer = async () => {
     console.log(e);
   }
 }
-
 ```
 For more usages, please refer to the [test file](./src/index.spec.ts).
 
@@ -67,8 +66,6 @@ The function will throw three types errors.
 
 ## License
 The MIT License (MIT)
-
-Copyright (c) 2013 viruschidai@gmail.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
