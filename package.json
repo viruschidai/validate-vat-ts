@@ -1,0 +1,42 @@
+{
+  "name": "validate-vat-ts",
+  "version": "1.0.0",
+  "description": "A Europe VAT number validation lib",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "@types/isomorphic-fetch": "0.0.35",
+    "@types/node": "^13.7.1",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.0",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "test": "jest",
+    "prepare": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viruschidai/validate-vat"
+  },
+  "keywords": [
+    "VAT",
+    "VIES",
+    "Tax",
+    "Number",
+    "Validation",
+    "node.js"
+  ],
+  "author": "Bill Gao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/viruschidai/validate-vat/issues"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
