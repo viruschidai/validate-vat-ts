@@ -55,7 +55,7 @@ The function will throw three types errors.
 
 - ViesServerError
    
-  This is when the VIES server returns some error code.
+  This is when the VIES server returns some error code. The error message is whatever the `faultstring` returned from VIES server. You could probably find out all the possible error messages from the[test file](./src/index.spec.ts)
 
 - ViesClientError 
 
