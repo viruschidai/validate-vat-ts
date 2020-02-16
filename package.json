@@ -19,6 +19,9 @@
     "test": "jest",
     "prepare": "tsc"
   },
+  "files": [
+    "dist/*"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/viruschidai/validate-vat-ts"

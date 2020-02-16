@@ -1,6 +1,7 @@
 src
 test
 jest.config.jest
-README.md
 renovate.json
 tsconfig.json
+coverage
+.travis.yml
