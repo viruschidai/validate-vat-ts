@@ -13,7 +13,7 @@ npm install validate-vat-ts
 ```
 In your code
 ```javascript
-import validateVat, {ViesValidationResponse} from 'validate-vat';
+import validateVat, {ViesValidationResponse} from 'validate-vat-ts';
 
 const consumer = async () => {
   try {
