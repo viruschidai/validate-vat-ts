@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/viruschidai/validate-vat-ts.svg?branch=master)](https://travis-ci.com/viruschidai/validate-vat-ts)
 
-The original [validate-vat](https://github.com/viruschidai/validate-vat) lib was written in CoffeeScript and did not update for many years. This rewrites it in TypeScript and should work in both server side and client side. This lib is basically calling web service provided by VIES (at http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl) for VAT number validation. 
+The original [validate-vat](https://github.com/viruschidai/validate-vat) lib was written in CoffeeScript and did not update for many years. This rewrites it in TypeScript. This lib is basically calling web service provided by VIES (at http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl) for VAT number validation. It can only be used in node env, if you want to call the VIEW service from browser, you probably need proxy it through your server.
 
 ## What is a VAT number?
 A value added tax identification number or VAT identification number (VATIN) is an identifier used in many countries, including the countries of the European Union, for value added tax purposes.
