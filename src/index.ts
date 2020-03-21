@@ -33,10 +33,10 @@ export class ViesClientError extends Error {
 }
 
 export const VAT_SERVICE_URL: string =
-  "http://ec.europa.eu/taxation_customs/vies/services/checkVatService";
+  "https://ec.europa.eu/taxation_customs/vies/services/checkVatService";
 
 export const VAT_TEST_SERVICE_URL: string =
-  "http://ec.europa.eu/taxation_customs/vies/services/checkVatTestService";
+  "https://ec.europa.eu/taxation_customs/vies/services/checkVatTestService";
 
 const soapBodyTemplate: string =
   '<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"\n  xmlns:tns1="urn:ec.europa.eu:taxud:vies:services:checkVat:types"\n  xmlns:impl="urn:ec.europa.eu:taxud:vies:services:checkVat">\n  <soap:Header>\n  </soap:Header>\n  <soap:Body>\n    <tns1:checkVat xmlns:tns1="urn:ec.europa.eu:taxud:vies:services:checkVat:types"\n     xmlns="urn:ec.europa.eu:taxud:vies:services:checkVat:types">\n     <tns1:countryCode>_country_code_placeholder_</tns1:countryCode>\n     <tns1:vatNumber>_vat_number_placeholder_</tns1:vatNumber>\n    </tns1:checkVat>\n  </soap:Body>\n</soap:Envelope>';
