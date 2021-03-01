@@ -5,11 +5,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "@types/jest": "25.2.3",
     "@types/isomorphic-fetch": "0.0.35",
+    "@types/jest": "25.2.3",
     "@types/node": "13.11.0",
     "jest": "25.2.7",
     "ts-jest": "25.3.1",
