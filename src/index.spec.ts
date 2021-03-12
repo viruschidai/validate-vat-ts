@@ -16,14 +16,6 @@ describe("validateVat()", () => {
       expect(result.valid).toBeTruthy();
     });
 
-    test("should return false if it is an invalid VAT number", async () => {
-      const result = (await validateVat(
-        CountryCodes.UnitedKingdom,
-        "802311783"
-      )) as ViesValidationResponse;
-      expect(result.valid).toBeFalsy();
-    });
-
     test("should throw INVALID_INPUT when VAT number is empty", async done => {
       try {
         await validateVat(CountryCodes.Germany, "");
@@ -32,6 +24,11 @@ describe("validateVat()", () => {
         expect((e as ViesServerError).message).toBe("INVALID_INPUT");
         done();
       }
+    });
+
+    test("should throw INVALID_INPUT when VAT number is invalid", async () => {
+        const result = (await validateVat(CountryCodes.Germany, "853746333B")) as ViesValidationResponse;
+        expect(result.valid).toBeFalsy();
     });
 
     test("should throw Error when failed to call service", async done => {
