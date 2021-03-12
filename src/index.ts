@@ -53,6 +53,7 @@ export enum CountryCodes {
   Finland = "FI",
   France = "FR",
   Germany = "DE",
+  Greece = "EL",
   Hungary = "HU",
   Ireland = "IE",
   Italy = "IT",
