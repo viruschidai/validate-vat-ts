@@ -69,7 +69,7 @@ export enum CountryCodes {
   Slovenia = "SI",
   Spain = "ES",
   Sweden = "SE",
-  UnitedKingdom = "GB"
+  NorthernIreland = "XI"
 }
 
 const getReadableErrorMsg = function(faultstring: string): string {
