@@ -149,8 +149,7 @@ const headers = {
   "Accept-Encoding": "none",
   "Accept-Charset": "utf-8",
   Connection: "close",
-  Host: "ec.europa.eu",
-  SOAPAction: "urn:ec.europa.eu:taxud:vies:services:checkVat/checkVat"
+  Host: "ec.europa.eu"
 };
 
 const validateVat = async (
