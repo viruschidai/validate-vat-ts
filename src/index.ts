@@ -153,7 +153,7 @@ const headers = {
 };
 
 const validateVat = async (
-  countryCode: CountryCodes,
+  countryCode: CountryCodes | string,
   vatNumber: string,
   serviceUrl: string = VAT_SERVICE_URL
 ): Promise<ViesValidationResponse> => {
