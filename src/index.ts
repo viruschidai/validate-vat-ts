@@ -72,7 +72,7 @@ export enum CountryCodes {
   NorthernIreland = "XI"
 }
 
-const getReadableErrorMsg = function(faultstring: string): string {
+const getReadableErrorMsg = function (faultstring: string): string {
   switch (faultstring) {
     case "INVALID_INPUT":
       return "The provided CountryCode is invalid or the VAT number is empty";
@@ -106,7 +106,7 @@ const parseField = (
 };
 
 const hasFault = (soapMessage: string): boolean => {
-  return soapMessage.match(/<soap:Fault>\S+<\/soap:Fault>/g) !== null;
+  return soapMessage.match(/<env:Fault>\S+<\/env:Fault>/g) !== null;
 };
 
 const parseSoapResponse = (soapMessage: string): ViesValidationResponse => {
@@ -118,12 +118,13 @@ const parseSoapResponse = (soapMessage: string): ViesValidationResponse => {
       soapMessage
     );
   } else {
-    const countryCode = parseField(soapMessage, "countryCode");
-    const vatNumber = parseField(soapMessage, "vatNumber");
-    const requestDate = parseField(soapMessage, "requestDate");
-    const valid = parseField(soapMessage, "valid");
+    const countryCode = parseField(soapMessage, "ns2:countryCode");
+    const vatNumber = parseField(soapMessage, "ns2:vatNumber");
+    const requestDate = parseField(soapMessage, "ns2:requestDate");
+    const valid = parseField(soapMessage, "ns2:valid");
 
-    if (!countryCode || !vatNumber || !requestDate || !valid) {
+    // vatNumber is an empty string when evaluated as not valid
+    if (!countryCode || vatNumber === undefined || !requestDate || !valid) {
       throw new ViesClientError(
         `Failed to parse vat validation info from VIES response`,
         soapMessage
@@ -135,14 +136,14 @@ const parseSoapResponse = (soapMessage: string): ViesValidationResponse => {
       vatNumber,
       requestDate,
       valid: valid === "true",
-      name: parseField(soapMessage, "name"),
-      address: parseField(soapMessage, "address")?.replace(/\n/g, ", ")
+      name: parseField(soapMessage, "ns2:name"),
+      address: parseField(soapMessage, "ns2:address")?.replace(/\n/g, ", ")
     };
   }
 };
 
 const headers = {
-  "Content-Type": "application/x-www-form-urlencoded",
+  "Content-Type": "text/xml; charset=utf-8",
   "User-Agent": "node-soap",
   Accept:
     "text/html,application/xhtml+xml,application/xml,text/xml;q=0.9,*/*;q=0.8",
